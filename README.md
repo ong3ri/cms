@@ -23,5 +23,5 @@ That's it, the application is now running.
 
 ## Using the application
 
-Once the application is installed you can go to your browser and [view the app](`http://localhost:2345`).
+Once the application is installed you can go to your browser and [view the app](http://localhost:2345).
 
