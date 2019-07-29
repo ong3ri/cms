@@ -1,19 +1,10 @@
-import graphene
 from graphene import relay
-from graphene_sqlalchemy import SQLAlchemyObjectType, SQLAlchemyConnectionField
+from graphene_sqlalchemy import SQLAlchemyObjectType
 from app.models import (Repositories as ReposModel, RepositoryFields as RepoFieldsModel,
                         RepositoryFieldTypes as RepoFieldTypesModel,
                         NumericalFieldProperties as NumericalFieldPropsModel,
                         PlainTextFieldProperties as PlainTextFieldPropsModel, NumericalData as NumericalDataModel,
                         PlainTextData as PlainTextDataModel, Items as ItemsModel)
-
-schema = ''
-
-
-class Query(graphene.ObjectType):
-    node = relay.Node.Field()
-
-    repos = 
 
 
 class Repos(SQLAlchemyObjectType):
@@ -27,15 +18,15 @@ class ReposConnection(relay.Connection):
         node = Repos
 
 
-class ReposFields(SQLAlchemyObjectType):
+class RepoFields(SQLAlchemyObjectType):
     class Meta:
         model = RepoFieldsModel
         interfaces = (relay.Node, )
 
 
-class ReposFieldsConnection(relay.Connection):
+class RepoFieldsConnection(relay.Connection):
     class Meta:
-        node = ReposFields
+        node = RepoFields
 
 
 class ReposFieldTypes(SQLAlchemyObjectType):
@@ -49,26 +40,26 @@ class ReposFieldTypesConnection(relay.Connection):
         node = ReposFieldTypes
 
 
-class NumericalFieldProperties(SQLAlchemyObjectType):
+class NumericalFieldProps(SQLAlchemyObjectType):
     class Meta:
         model = NumericalFieldPropsModel
         interfaces = (relay.Node, )
 
 
-class NumericalFieldPropertiesConnection(relay.Connection):
+class NumericalFieldPropsConnection(relay.Connection):
     class Meta:
-        node = NumericalFieldProperties
+        node = NumericalFieldProps
 
 
-class PlainTextFieldProperties(SQLAlchemyObjectType):
+class PlainTextFieldProps(SQLAlchemyObjectType):
     class Meta:
         model = PlainTextFieldPropsModel
         interfaces = (relay.Node, )
 
 
-class PlainTextFieldPropertiesConnection(relay.Connection):
+class PlainTextFieldPropsConnection(relay.Connection):
     class Meta:
-        node = PlainTextFieldProperties
+        node = PlainTextFieldProps
 
 
 class PlainTextData(SQLAlchemyObjectType):
