@@ -1,0 +1,8 @@
+click
+flask
+flask_graphql
+flask_migrate
+flask_sqlalchemy
+graphene_sqlalchemy
+psycopg2-binary
+sqlalchemy_utils
